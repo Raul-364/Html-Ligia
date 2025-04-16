@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            border: 2px solid black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-building {
+            width: 30px;
+            height: 30px;
+        }
+
+        .sidebar {
+            background-color: black;
+            color: white;
+            width: 250px;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+
+        .table-container {
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        .table-header {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="sidebar fixed h-full">
+            <div class="flex justify-center mb-8">
+                <div class="logo-circle bg-white">
+                    <svg class="logo-building text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9h1M9 13h1M9 17h1M15 13h1M15 17h1" />
+                    </svg>
+                </div>
+            </div>
+            <nav class="space-y-2">
+                <a href="product-register.html" class="block py-2 px-4 rounded hover:bg-gray-800 transition-colors">
+                    Cadastrar Produto
+                </a>
+                <a href="inventory.html" class="block py-2 px-4 rounded bg-gray-800">
+                    Inventário
+                </a>
+            </nav>
+            <div class="absolute bottom-4 w-[calc(100%-2rem)]">
+                <button id="logoutBtn" class="w-full py-2 px-4 rounded hover:bg-gray-800 transition-colors text-left">
+                    Sair
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content flex-1">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-light tracking-wide">INVENTÁRIO</h1>
+            </div>
+
+            <div class="table-container overflow-hidden">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="table-header">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                Nome
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                Valor
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                Quantidade
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                Descrição
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                Fornecedor
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                Ações
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200" id="productTableBody">
+                        <!-- Product rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/inventory.js"></script>
+</body>
+</html>
